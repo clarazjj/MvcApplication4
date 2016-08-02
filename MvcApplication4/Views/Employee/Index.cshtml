@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+    
+}
+@using MvcApplication4.ViewModels
+@using MvcApplication4.BusinessLayer
+@model EmployeeListViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetView</title>
+</head>
+<body>
+
+   <a href="/Employee/AddNew"> Add New </a>
+    <hr />
+    <div>
+ 
+        <b>Empolyee Details</b>
+            @foreach (EmployeeViewModel item in Model.Employees)
+            {
+                <span style="background-color:@item.SalaryColor">
+                    @item.EmployeeName @item.Salary
+                </span>
+            }
+                 
+        
+    </div>
+</body>
+</html>
